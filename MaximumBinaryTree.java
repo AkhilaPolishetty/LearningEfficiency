@@ -14,11 +14,11 @@ class Solution {
     
     public TreeNode constructs(int[] nums, int l,  int r){
         TreeNode x;
-        if(l > r) return null;
         if( l == r){
             x = new TreeNode(nums[l]);
             return x;
         }
+        if(l > r) return null;
         
         int index = max(nums, l, r); 
         x = new TreeNode(nums[index]);
@@ -30,19 +30,18 @@ class Solution {
 
     public int max(int[] nums, int i, int j){
         if(i==j) return i;
-        int index =0, max=0;
+        int index =0;
         while(i < j){
             if(nums[i] <nums[j]){
                 index = j;
                 i++;
-                max = nums[j];
             }else{
                 index =i;
                 j--;
-                max = nums[i];
             }  
         }
         return index;
     }
             
     }
+
